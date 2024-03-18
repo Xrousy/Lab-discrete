@@ -36,10 +36,10 @@ void duplicates(Sets* set) // Функция удаляет одинаковые
             if(set->elements[i] == set->elements[j])
             {
                 for(int k = j; k < set->size - 1; k++)
-                {
+                { 
                     set->elements[k] = set->elements[k+1];
                 }
-                set->size = set->size - 1;
+                set->size--;
                 set->elements = realloc(set->elements, set->size * sizeof(char));
             }
         }
@@ -199,11 +199,32 @@ int main()
             if(temp != 0)
             {
                 printf("Множество A является подмножеством B\n");
+                printf("Множество A: ");
+                for(int i = 0; i < setA.size; i++)
+                {
+                    printf("%c ", setA.elements[i]);
+                }
+                printf("Множество B: ");
+                for(int i = 0; i < setB.size; i++)
+                {
+                    printf("%c ", setB.elements[i]);
+                }
             }
             else
             {
                 printf("Множество A не является подмножеством B\n");
+                printf("Множество A: ");
+                for(int i = 0; i < setA.size; i++)
+                {
+                    printf("%c ", setA.elements[i]);
+                }
+                printf("Множество B: ");
+                for(int i = 0; i < setB.size; i++)
+                {
+                    printf("%c ", setB.elements[i]);
+                }
             }
+            printf("\n");
             break;
         case 2:
             printf("Результат объединения множеств A и B: ");
@@ -212,6 +233,17 @@ int main()
             {
                 printf("%c ", unionResult.elements[i]);
             }
+            printf("\n");
+            printf("Множество A: ");
+                for(int i = 0; i < setA.size; i++)
+                {
+                    printf("%c ", setA.elements[i]);
+                }
+                printf("Множество B: ");
+                for(int i = 0; i < setB.size; i++)
+                {
+                    printf("%c ", setB.elements[i]);
+                }
             printf("\n");
             break;
         case 3:
@@ -222,6 +254,17 @@ int main()
                 printf("%c ", intersectionResult.elements[i]);
             }
             printf("\n");
+            printf("Множество A: ");
+                for(int i = 0; i < setA.size; i++)
+                {
+                    printf("%c ", setA.elements[i]);
+                }
+                printf("Множество B: ");
+                for(int i = 0; i < setB.size; i++)
+                {
+                    printf("%c ", setB.elements[i]);
+                }
+            printf("\n");
             break;
         case 4:
             printf("Результат разности множеств A и B: ");
@@ -230,6 +273,17 @@ int main()
             {
                 printf("%c ", differenceResult.elements[i]);
             }
+            printf("\n");
+            printf("Множество A: ");
+                for(int i = 0; i < setA.size; i++)
+                {
+                    printf("%c ", setA.elements[i]);
+                }
+                printf("Множество B: ");
+                for(int i = 0; i < setB.size; i++)
+                {
+                    printf("%c ", setB.elements[i]);
+                }
             printf("\n");
             break;
         case 5:
