@@ -23,9 +23,9 @@ void addtoSets(Sets* set, char element)
     set->elements[set->size - 1] = element;
 }
 
-void duplicates(Sets* set) // Функция удаляет одинаковые эллементы
+void duplicates(Sets* set) // Функция удаляет одинаковые элементы
 {
-    if (set->size <=1)
+    if (set->size < 1)
     {
         return;
     }
@@ -41,6 +41,7 @@ void duplicates(Sets* set) // Функция удаляет одинаковые
                 }
                 set->size--;
                 set->elements = realloc(set->elements, set->size * sizeof(char));
+                j--; // После удаления дубликата необходимо уменьшить индекс j, чтобы проверить следующие элементы
             }
         }
     }
