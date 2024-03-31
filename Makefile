@@ -1,7 +1,7 @@
 all: main
 
-main: main.c
-	gcc -Wall -Werror -o lab1 lab1.c
+main: Lab4.c
+	gcc -Wall -Werror -o lab4 Lab4.c -lm
 
 rm: main
-	rm lab1
+	rm lab3
