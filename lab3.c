@@ -8,27 +8,6 @@ typedef struct
     int size;
 } Sets;
 
-void sortSets(Sets* set) 
-{
-    if (set->size <= 1) 
-    {
-        return;
-    }
-    char temp;
-    for (int i = 0; i < set->size - 1; i++) 
-    {
-        for (int j = i + 1; j < set->size; j++) 
-        {
-            if (set->elements[i] > set->elements[j]) 
-            {
-                temp = set->elements[i];
-                set->elements[i] = set->elements[j];
-                set->elements[j] = temp;
-            }
-        }
-    }
-}
-
 void duplicates(Sets* set) 
 {
     if (set->size < 1) 
